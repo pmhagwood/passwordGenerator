@@ -15,40 +15,44 @@ var passValues = {
 
 // generate the password based on user selections
 function generatePassword() {
+  var password = [];
   // promts the user to select a number between 8 and 128
   passLength = prompt("How many characters would you like? Password must include at least 8 characters.");
   // if the user picks a number between 8 and 128 then start password generator
   if (passLength >= 8 && passLength <= 128){
     // loops through the number of times the user picked
-    for (var i = 0; i <= passLength; i++) {
+    for (var i = 0; i <= (passLength - 1); i++) {
       var valueNum = Math.floor (Math.random()*4);
       console.log("valueNum is " + valueNum);
       if (valueNum === 0){
         var alphNum = Math.floor (Math.random()* passValues.alphabet.length);
         console.log('alphNum is ' + alphNum);
         passCharacter = passValues.alphabet[alphNum];
+        password.push([passCharacter]);
         console.log(passCharacter);
-        //password = password.push(passCharacter);
       } else if (valueNum === 1){
         var alphNum = Math.floor (Math.random()* passValues.alphabet.length);
         console.log('alphNum is ' + alphNum);
         passCharacter = passValues.alphabet[alphNum].toUpperCase();
         console.log(passCharacter);
-        //password = password.push(passCharacter);
+        password.push([passCharacter]);
+         console.log(passCharacter);
       } else if (valueNum === 2){
         var numbNum = Math.floor (Math.random()* passValues.number.length);
         console.log('Number is ' + numbNum);
         passCharacter = passValues.number[numbNum];
         console.log(passCharacter);
-        //password = password.push(passCharacter);
+        password.push([passCharacter]);
+        console.log(passCharacter);
       } else {
         var specNum = Math.floor (Math.random()* passValues.specialChar.length);
         console.log('Number is ' + specNum);
         passCharacter = passValues.specialChar[specNum];
         console.log(passCharacter);
-        //password = password.push(passCharacter);
+        password.push([passCharacter]);
+        console.log(passCharacter);
       }
-      console.log("password is " + password)
+      console.log("password is " + password);
     }
   } else {
     // if the user didn't pick a number between 8 and 128 then ask again
@@ -56,6 +60,7 @@ function generatePassword() {
     writePassword();
   }
 }
+
 
 
 // Write password to the #password input
