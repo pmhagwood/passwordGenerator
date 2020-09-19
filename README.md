@@ -9,6 +9,6 @@ The JS will then determine the user selections and generate a random password ba
 
 
 The portfolio can be accessed here [portfolio](https://github.com/pmhagwood/passwordGenerator)
-Live site can be accessed here [livesite](https://pmhagwood.github.io/portfolio/)
+Live site can be accessed here [livesite](https://pmhagwood.github.io/passwordGenerator/)
 
-Screen capture of the about me page [Aboutme](https://github.com/pmhagwood/portfolio/blob/master/images/aboutmepage.png)
+Screen capture of the Password Generator [GeneratorScreen](https://github.com/pmhagwood/passwordGenerator/blob/master/passwordgeneratorscreenshot.png)
