@@ -164,7 +164,7 @@ function generatePassword() {
       console.log(useOptions);
     }
     console.log('useOptions is ' + useOptions);
-    password = useOptions;
+    password = useOptions.join('');
     console.log('password is ' + password);
     return password;
 
