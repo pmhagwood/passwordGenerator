@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// set an object passValues with all the variables needed for the password
 
+// Arrays with all the possible character variations
 var lowCaseAlphabet = [
   "a", 
   "b", 
@@ -96,25 +96,24 @@ var specialCharacters = [
 ]
 
 
-
-
-
 // generate the password based on user selections
 function generatePassword() {
   // promts the user to select a number between 8 and 128
   var passLength = parseInt(
     prompt("How many characters would you like? Password must include at least 8 characters.")
   );
-  console.log(passLength);
+  //console.log(passLength);
 
-  // Checks proper length
+  // Check for proper lenght based on user selection
   if (passLength < 8 || passLength > 128){
     alert('password needs to be between 8 and 128, please try again.')
     return password = "Try Again";
   } else if (isNaN(passLength)){
+    // checks to see if they typed in a non-number
     alert('password needs to be a number between 8 and 128, please try again.')
     return password = "Try Again";
   } else {
+    // Asks remaining questions to create password
     var useUpperCase = confirm (
       'Would you like password to include upper case letters?'
     );
@@ -127,7 +126,7 @@ function generatePassword() {
     var useSpecialCharacters = confirm (
       'Would you like password to include special characters?'
     );
-    
+    // checks to see if they chose no characters at all
       if (
         useUpperCase === false &&
         useLowerCase === false &&
@@ -143,7 +142,7 @@ function generatePassword() {
     // Array to store useable options
     var useOptions = [];
 
-    // If statement to store all the possible options
+    // If statements to store all the possible options into one array
     if (useLowerCase){
       possibleOptions = possibleOptions.concat(lowCaseAlphabet);
     }
@@ -156,16 +155,17 @@ function generatePassword() {
     if(useSpecialCharacters){
       possibleOptions = possibleOptions.concat(specialCharacters);
     }
-    console.log(possibleOptions);
+    // console.log(possibleOptions);
     // loop to store all the useable characters
     for (var i = 0; i <= (passLength -1); i++) {
       var getRandom = Math.floor (Math.random ()* possibleOptions.length);
       useOptions.push(possibleOptions[getRandom]);
-      console.log(useOptions);
+      //console.log(useOptions);
     }
-    console.log('useOptions is ' + useOptions);
+    //console.log('useOptions is ' + useOptions);
+    // set the password for print to screen and print
     password = useOptions.join('');
-    console.log('password is ' + password);
+    //console.log('password is ' + password);
     return password;
 
   
